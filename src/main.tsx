@@ -8,10 +8,10 @@ createRoot(document.getElementById("root")!).render(
   <>
     <App />
     <SpeedInsights 
-      sampleRate={1} // Send all events for maximum accuracy
-      debug={process.env.NODE_ENV === 'development'} // Enable debug in development
+      sampleRate={1}
+      debug={true} // Force debug mode to see what's happening
       beforeSend={(data) => {
-        // You can add custom logic here to filter or modify events
+        console.log('Speed Insights Event:', data); // Log events to console
         return data;
       }}
     />
