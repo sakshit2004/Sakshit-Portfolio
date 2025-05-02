@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;        /* black */
+    --foreground: 0 0% 100%;      /* white */
+    --card: 0 0% 10%;             /* very dark gray */
+    --card-foreground: 0 0% 100%; /* white */
+    --primary: 0 0% 0%;           /* black */
+    --primary-foreground: 0 0% 100%; /* white */
+    --secondary: 0 0% 20%;        /* dark gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 30%;            /* muted dark gray */
+    --muted-foreground: 0 0% 80%; /* lighter gray */
+    --accent: 0 0% 100%;          /* white */
+    --accent-foreground: 0 0% 0%; /* black */
+    --destructive: 0 80% 60%;     /* red shade */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 50%;           /* medium gray border */
+    --input: 0 0% 30%;
+    --ring: 0 0% 100%;
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  ::selection {
+    background: #FEF7CD;     /* soft yellow for selection highlight */
+    color: #000000;          /* black text when selected */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-card to-black/80;
+}
+
+.nav-link {
+  @apply text-lg font-medium px-4 py-1 rounded transition hover:bg-white hover:text-black;
+}
+
+@keyframes gentle-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(254,247,205,0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(254,247,205,0.7);
+  }
+}
+
+@keyframes experienceGlow {
+  0% {
+    box-shadow: 0 0 14px 3px rgba(254,247,205,0.3), 0 4px 32px 0 rgba(0,0,0,0.18);
+    border-color: #fef7cd;
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(254,247,205,0.70), 0 4px 32px 0 rgba(0,0,0,0.18);
+    border-color: #ffe066;
+  }
+  100% {
+    box-shadow: 0 0 14px 3px rgba(254,247,205,0.3), 0 4px 32px 0 rgba(0,0,0,0.18);
+    border-color: #fef7cd;
+  }
+}
+
+/* Skills marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slide-text {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.shadow-experienceGlow {
+  box-shadow: 0 0 20px 4px rgba(254,247,205,0.6), 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+  border-color: #ffe066;
+}
+
+.experience-hover-animate.group-hover\:animate-experienceGlow, .group:hover .experience-hover-animate {
+  animation: experienceGlow 1.5s ease-in-out infinite;
+  border-color: #ffe066;
+}
+
+@media (hover: hover) {
+  .group:hover .experience-hover-animate {
+    animation: experienceGlow 1.5s ease-in-out infinite;
+    border-color: #ffe066 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    @apply text-base px-2 py-1;
+  }
+  section, .glass, .card-gradient {
+    @apply p-4;
+  }
+  .glass {
+    border-radius: 1rem;
+  }
+}
+
+/* Skills marquee styles */
+.skills-marquee-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.skills-marquee {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+
+.skills-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .skills-marquee {
+    animation: marquee 45s linear infinite;
+  }
+  
+  .skill-item {
+    height: auto;
+  }
+}
