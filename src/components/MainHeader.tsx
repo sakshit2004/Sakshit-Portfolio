@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface MainHeaderProps {
   NAV_LINKS: Array<{ label: string; href: string }>;
@@ -37,7 +38,7 @@ export const MainHeader = ({ NAV_LINKS }: MainHeaderProps) => {
 
   return (
     <nav 
-      className={`w-full sticky top-0 z-40 flex items-center justify-between px-6 py-3 text-white transition-all duration-300 ${
+      className={`w-full sticky top-0 z-40 flex items-center justify-between px-6 py-3 transition-all duration-300 ${
         scrolled 
           ? "bg-black/80 backdrop-blur-md shadow-lg border-b border-white/20" 
           : "bg-black border-b border-white/10"
@@ -48,7 +49,7 @@ export const MainHeader = ({ NAV_LINKS }: MainHeaderProps) => {
         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-300 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
       </span>
       
-      <div className="hidden md:flex gap-6">
+      <div className="hidden md:flex gap-6 items-center">
         {NAV_LINKS.map((link) => (
           <a
             key={link.href}
@@ -68,6 +69,7 @@ export const MainHeader = ({ NAV_LINKS }: MainHeaderProps) => {
             <span className="absolute inset-0 bg-yellow-300/0 rounded-md -z-0 transition-all duration-300 group-hover:bg-yellow-300/10"></span>
           </a>
         ))}
+        <ThemeToggle />
       </div>
       
       <button
@@ -109,6 +111,9 @@ export const MainHeader = ({ NAV_LINKS }: MainHeaderProps) => {
                 ></span>
               </a>
             ))}
+            <div className="pt-4">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       )}

@@ -62,9 +62,9 @@ export const AchievementsGallery = () => {
 
   return (
     <section id="achievements" className="fade-in w-full max-w-[1800px] mx-auto py-16 px-2 md:px-6">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white bg-gradient-to-r from-white/70 via-white to-white/70 bg-clip-text">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white dark:text-white light:text-gray-900 bg-gradient-to-r from-white/70 via-white to-white/70 dark:from-white/70 dark:via-white dark:to-white/70 light:from-gray-700 light:via-gray-900 light:to-gray-700 bg-clip-text">
         <span className="flex items-center justify-center gap-2">
-          <ImagesIcon className="inline-block" size={32} />
+          <ImagesIcon className="inline-block dark:text-white light:text-gray-900" size={32} />
           Gallery
         </span>
       </h2>
@@ -73,7 +73,7 @@ export const AchievementsGallery = () => {
         {achievements.map((achievement) => (
           <div 
             key={achievement.id} 
-            className="overflow-hidden bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-yellow-300 transition-all duration-300 group hover:shadow-[0_0_30px_5px_rgba(254,247,205,0.5)] rounded-lg cursor-pointer transform hover:scale-[1.02]"
+            className="overflow-hidden bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-yellow-300 transition-all duration-300 group hover:shadow-[0_0_30px_5px_rgba(254,247,205,0.5)] rounded-lg cursor-pointer transform hover:scale-[1.02] dark:bg-white/5 dark:border-white/20 light:bg-gray-100 light:border-gray-200"
             onClick={() => openFullSizeImage(achievement.imageUrl, achievement.alt)}
           >
             <div className="relative">

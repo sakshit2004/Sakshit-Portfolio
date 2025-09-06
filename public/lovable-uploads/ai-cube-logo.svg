@@ -1,0 +1,22 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cubeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Cube faces -->
+  <!-- Top face -->
+  <polygon points="20,10 40,20 30,30 10,20" fill="url(#cubeGradient)" opacity="0.9"/>
+  <!-- Front face -->
+  <polygon points="10,20 30,30 30,50 10,40" fill="url(#cubeGradient)" opacity="0.7"/>
+  <!-- Right face -->
+  <polygon points="30,30 40,20 40,40 30,50" fill="url(#cubeGradient)" opacity="0.5"/>
+  
+  <!-- AI text on top face -->
+  <text x="25" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">AI</text>
+</svg>

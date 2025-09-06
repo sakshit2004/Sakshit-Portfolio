@@ -13,6 +13,13 @@
     <meta property="og:url" content="https://sakshitsharma.com" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@sakshit0044" />
+    <script>
+      // Prevent flash of light content by setting dark mode immediately
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body class="dark">
     <div id="root"></div>
