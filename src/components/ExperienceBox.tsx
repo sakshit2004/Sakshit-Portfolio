@@ -37,9 +37,10 @@ export const ExperienceBox: React.FC<ExperienceBoxProps> = ({
       {/* Left Circle with animated connector line */}
       <div className="absolute left-0 top-0 flex items-center justify-center z-10">
         <div className="w-9 h-9 rounded-full bg-black border-2 border-white shadow-md flex items-center justify-center transition-all duration-300
-          group-hover:scale-110 group-hover:border-yellow-300 group-hover:shadow-[0_0_24px_2px_rgba(254,247,205,0.6)]">
+          group-hover:scale-110 group-hover:border-yellow-300 group-hover:shadow-[0_0_24px_2px_rgba(254,247,205,0.6)]
+          dark:bg-black dark:border-white light:bg-white light:border-gray-300">
           <span
-            className={`flex items-center justify-center w-7 h-7 rounded-full text-white transition-all duration-300
+            className={`flex items-center justify-center w-7 h-7 rounded-full text-white dark:text-white light:text-gray-700 transition-all duration-300
               group-hover:bg-yellow-400/90 group-hover:text-black`}
             style={{
               background: exp.color === "blue"
@@ -72,19 +73,19 @@ export const ExperienceBox: React.FC<ExperienceBoxProps> = ({
           "
         >
           {/* Horizontal connection line with animation */}
-          <div className="absolute left-[-22px] top-[18px] w-[22px] h-0.5 bg-white/30 
-            group-hover:bg-gradient-to-r from-yellow-300 to-white/30 
+          <div className="absolute left-[-22px] top-[18px] w-[22px] h-0.5 bg-white/30 dark:bg-white/30 light:bg-gray-400/50
+            group-hover:bg-gradient-to-r from-yellow-300 to-white/30 dark:group-hover:from-yellow-300 dark:group-hover:to-white/30 light:group-hover:from-yellow-500 light:group-hover:to-gray-400/50
             transition-all duration-500 group-hover:h-1 group-hover:left-[-24px] group-hover:w-[24px]"></div>
           
           <div className="flex justify-between items-start mb-3">
             <div>
               <DateTag period={exp.period} />
-              <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
+              <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900 mb-1">{exp.role}</h3>
               <a 
                 href={exp.companyUrl || "#"} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block text-lg text-white/70 hover:text-yellow-300 transition-colors"
+                className="inline-block text-lg text-white/70 dark:text-white/70 light:text-gray-600 hover:text-yellow-300 transition-colors"
               >
                 {exp.company}
               </a>
@@ -96,7 +97,7 @@ export const ExperienceBox: React.FC<ExperienceBoxProps> = ({
                 href={exp.companyUrl || "#"} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-shrink-0 bg-white/5 p-1 rounded-md border border-white/10 ml-4 mt-1 hover:border-yellow-300 transition-colors"
+                className="flex-shrink-0 bg-white/5 p-1 rounded-md border border-white/10 ml-4 mt-1 hover:border-yellow-300 transition-colors dark:bg-white/5 dark:border-white/10 light:bg-gray-100 light:border-gray-200"
               >
                 <img 
                   src={exp.logoUrl} 
@@ -107,7 +108,7 @@ export const ExperienceBox: React.FC<ExperienceBoxProps> = ({
             )}
           </div>
           
-          <p className="text-white/80 mb-4">{exp.description}</p>
+          <p className="text-white/80 dark:text-white/80 light:text-gray-700 mb-4">{exp.description}</p>
           
           {/* Skills badges with cleaned up text */}
           <div className="flex flex-wrap gap-2">

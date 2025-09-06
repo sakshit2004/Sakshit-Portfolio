@@ -24,8 +24,147 @@
     --radius: 0.75rem;
   }
 
+  .light {
+    --background: 0 0% 100%;      /* white */
+    --foreground: 0 0% 0%;        /* black */
+    --card: 0 0% 95%;             /* very light gray */
+    --card-foreground: 0 0% 0%;   /* black */
+    --primary: 0 0% 100%;         /* white */
+    --primary-foreground: 0 0% 0%; /* black */
+    --secondary: 0 0% 90%;        /* light gray */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 85%;            /* muted light gray */
+    --muted-foreground: 0 0% 30%; /* darker gray */
+    --accent: 0 0% 0%;            /* black */
+    --accent-foreground: 0 0% 100%; /* white */
+    --destructive: 0 80% 60%;     /* red shade */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%;           /* light gray border */
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+  }
+
   body {
     @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  /* Ensure dark mode is applied by default */
+  html {
+    color-scheme: dark;
+  }
+
+  /* Force dark mode as default */
+  html:not(.light) {
+    color-scheme: dark;
+  }
+
+  html:not(.light) body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .light body {
+    @apply bg-background text-foreground;
+  }
+
+  .light html {
+    color-scheme: light;
+  }
+
+  /* Light mode overrides */
+  .light {
+    background-color: white;
+    color: #1f2937;
+  }
+
+  .light .min-h-screen {
+    background-color: white !important;
+    color: #1f2937 !important;
+  }
+
+  /* Light mode text colors */
+  .light .text-white {
+    color: #1f2937 !important;
+  }
+
+  .light .text-white\/70 {
+    color: #6b7280 !important;
+  }
+
+  .light .text-white\/80 {
+    color: #4b5563 !important;
+  }
+
+  .light .text-white\/90 {
+    color: #374151 !important;
+  }
+
+  /* Light mode backgrounds */
+  .light .bg-black {
+    background-color: white !important;
+  }
+
+  .light .bg-black\/80 {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .light .bg-black\/95 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .light .bg-white\/10 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .light .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+  }
+
+  /* Light mode borders */
+  .light .border-white {
+    border-color: #d1d5db !important;
+  }
+
+  .light .border-white\/10 {
+    border-color: #e5e7eb !important;
+  }
+
+  .light .border-white\/20 {
+    border-color: #d1d5db !important;
+  }
+
+  /* Light mode glass effects */
+  .light .glass {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: #e5e7eb !important;
+  }
+
+  /* Light mode theme toggle */
+  .light .border-white {
+    border-color: #d1d5db !important;
+  }
+
+  .light .bg-card\/70 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Light mode theme toggle button */
+  .light button {
+    border-color: #d1d5db !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #374151 !important;
+  }
+
+  /* Light mode hamburger menu lines */
+  .light .bg-white {
+    background-color: #374151 !important;
+  }
+
+  /* Light mode gradients */
+  .light .bg-gradient-to-r.from-white\/70.via-white.to-white\/70 {
+    background: linear-gradient(to right, #374151, #1f2937, #374151) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
   }
 
   ::selection {
@@ -44,8 +183,16 @@
   @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass;
 }
 
+.light .glass {
+  @apply bg-black/5 backdrop-blur-md border border-black/10 rounded-2xl shadow-lg;
+}
+
 .card-gradient {
   @apply bg-gradient-to-br from-card to-black/80;
+}
+
+.light .card-gradient {
+  @apply bg-gradient-to-br from-card to-white/80;
 }
 
 .nav-link {

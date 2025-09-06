@@ -49,7 +49,7 @@ export function TypingEffect({
   return (
     <span className={className}>
       {displayText}
-      <span className="border-r-2 border-white ml-1.5 animate-pulse" style={{height: "1em"}}></span>
+      <span className="border-r-2 border-white dark:border-white light:border-gray-900 ml-1.5 animate-pulse" style={{height: "1em"}}></span>
     </span>
   );
 }

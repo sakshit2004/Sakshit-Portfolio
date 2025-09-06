@@ -31,7 +31,7 @@ export const SkillsSection = () => {
 
   return (
     <section id="skills" className="fade-in max-w-[100vw] mx-auto my-16 px-4 pb-16 overflow-hidden">
-      <h2 className="text-3xl font-bold mb-8 text-center text-white bg-gradient-to-r from-white/70 via-white to-white/70 bg-clip-text">
+      <h2 className="text-3xl font-bold mb-8 text-center text-white dark:text-white light:text-gray-900 bg-gradient-to-r from-white/70 via-white to-white/70 dark:from-white/70 dark:via-white dark:to-white/70 light:from-gray-700 light:via-gray-900 light:to-gray-700 bg-clip-text">
         My Skills
       </h2>
 

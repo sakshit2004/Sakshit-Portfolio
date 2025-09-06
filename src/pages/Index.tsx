@@ -106,6 +106,32 @@ const TYPING_WORDS = [
 
 const EXPERIENCE = [
   {
+    role: "Software Engineer",
+    company: "Ontopical",
+    period: "June 2025 – Present",
+    description:
+      "At Ontopical, I'm building and deploying a multi-agent system using LLMs to automate the end-to-end collection of government documents. I support large-scale ML pipelines to extract structured insights from unstructured government datasets, and have evaluated multiple ML models on real-world datasets, boosting relevance accuracy by 28% in identifying opportunities. I work with unstructured public datasets to surface relevant opportunities for finding government opportunities using AI.",
+    tools: "Python, LLMs, Multi-agent Systems, ML Pipelines, Data Extraction, Government Data, AI, Machine Learning, Data Processing, Model Evaluation, Unstructured Data",
+    skills: [],
+    color: "purple",
+    icon: Brain,
+    logoUrl: "/lovable-uploads/sovra-logo.svg",
+    companyUrl: "https://ontopical.com"
+  },
+  {
+    role: "Founding AI Engineer",
+    company: "AIgovsandbox",
+    period: "January 2025 – June 2025",
+    description:
+      "At AIgovsandbox, I designed NLP pipelines for LLM-powered document search, risk flagging, and classification of policies. I fine-tuned prompt templates for various agent roles including risk assessor, compliance analyst, and sustainability auditor. I built FastAPI-based infrastructure and used OpenAI, Pinecone, and LangGraph to develop vectorized knowledge graphs. I deployed a full-stack MVP on AWS (Lambda, EC2, S3), ensuring performance and availability for enterprise use in this AI Governance SaaS startup.",
+    tools: "Python, FastAPI, OpenAI, Pinecone, LangGraph, AWS (Lambda, EC2, S3), NLP, LLM, Vector Databases, Knowledge Graphs, Prompt Engineering, SaaS, AI Governance, Risk Assessment, Compliance",
+    skills: [],
+    color: "blue",
+    icon: SquareCode,
+    logoUrl: "/lovable-uploads/ai-cube-logo.svg",
+    companyUrl: "https://aigovsandbox.com"
+  },
+  {
     role: "Founding AI/ML Engineer",
     company: "Xenara AI",
     period: "October 2024 - Present",
