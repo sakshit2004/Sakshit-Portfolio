@@ -34,7 +34,7 @@ const NAV_LINKS = [
 
 const NAME = "Sakshit Sharma";
 const ABOUT =
-  "I'm Sakshit Sharma, a skilled Data Engineer with experience in data analysis, AI/ML, and software development. I specialize in building efficient data pipelines, implementing machine learning models, and working with cloud platforms and modern data architectures. My goal is to solve real-world problems through data-driven solutions and contribute to the development of scalable systems.";
+  "I'm Sakshit Sharma, a skilled Software engineer with experience in AI and Data Engineering. I specialize in building efficient data pipelines, implementing machine learning models, and working with cloud platforms and modern data architectures. My goal is to solve real-world problems through data and AI driven solutions and contribute to the development of scalable systems.";
 
 const PROJECTS = [
   {
