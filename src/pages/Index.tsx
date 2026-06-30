@@ -1,250 +1,260 @@
-
-import { useState } from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Database,
-  Brain,
-  Code,
-  LayoutGrid,
-  Layers,
-  SquareCode,
-  Settings,
-  Terminal,
-  ImagesIcon,
-} from "lucide-react";
-import { ExperienceTimeline } from "@/components/ExperienceTimeline";
-import { ContactSection } from "@/components/ContactSection";
-import { SkillsSection } from "@/components/SkillsSection";
-import { MainHeader } from "@/components/MainHeader";
-import { TypingEffect } from "@/components/TypingEffect";
-import { Footer } from "@/components/Footer";
+import React, { useState } from "react";
+import { Loader2, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
 import { AchievementsGallery } from "@/components/AchievementsGallery";
-import { ScrollToTopButton } from "@/components/ScrollToTopButton";
-
-// Changed "Achievements" to "Gallery" in navigation links
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Gallery", href: "#achievements" },
-  { label: "Contact", href: "#contact" },
-];
 
 const NAME = "Sakshit Sharma";
-const ABOUT =
-  "I'm Sakshit Sharma, a skilled Software engineer with experience in AI and Data Engineering. I specialize in building efficient data pipelines, implementing machine learning models, and working with cloud platforms and modern data architectures. My goal is to solve real-world problems through data and AI driven solutions and contribute to the development of scalable systems.";
-
-const PROJECTS = [
-  {
-    title: "Project One",
-    description: "A simple description of your project goes here.",
-    tech: ["React", "TypeScript", "Tailwind"],
-    repo: "#",
-    demo: "#",
-  },
-  {
-    title: "Project Two",
-    description: "Another awesome project that showcases your skills.",
-    tech: ["Next.js", "Node.js", "Shadcn UI"],
-    repo: "#",
-    demo: "#",
-  },
-];
-
-const SKILLS = [
-  {
-    name: "React",
-    icon: LayoutGrid,
-    color: "blue",
-    description: "A JavaScript library for building UI.",
-  },
-  {
-    name: "Next.js",
-    icon: Layers,
-    color: "purple",
-    description: "A React framework for production-ready web apps.",
-  },
-  {
-    name: "TypeScript",
-    icon: SquareCode,
-    color: "green",
-    description: "Typed superset of JavaScript.",
-  },
-  {
-    name: "Tailwind",
-    icon: Settings,
-    color: "amber",
-    description: "A utility-first CSS framework.",
-  },
-  {
-    name: "Node.js",
-    icon: Terminal,
-    color: "blue",
-    description: "JavaScript runtime for server-side apps.",
-  },
-  {
-    name: "Shadcn UI",
-    icon: Code,
-    color: "purple",
-    description: "Beautiful UI components for React.",
-  },
-];
+const TAGLINE = "Startups · Product · Engineering";
+const BIO =
+  "I build AI systems and data infrastructure. I've been a founding engineer at multiple AI startups, built data pipelines and ML systems for the City of Ottawa, and lead engineering at Canada's largest student hackathon community. I've spoken at the CDAO Canada conference, Airflow Summit, and Algonquin College, and was an Ottawa semi-finalist at CEOx1DAY. I care about systems that work at scale and problems that matter.";
 
 const SOCIALS = [
-  { icon: Github, label: "GitHub", url: "https://github.com/sakshit2004" },
-  { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/sakshitsharma/" },
-  { icon: Mail, label: "Mail", url: "mailto:sakshit2004@gmail.com" },
+  { label: "GitHub",   url: "https://github.com/sakshit2004",                        blank: true  },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/sakshitsharma/",            blank: true  },
+  { label: "Email",    url: "mailto:sakshit2004@gmail.com",                          blank: false },
 ];
 
-const TYPING_WORDS = [
-  "Data Engineer",
-  "AI/ML Engineer",
-  "Software Engineer",
+const NAV = [
+  { label: "experience", href: "#experience" },
+  { label: "gallery",    href: "#gallery"    },
+  { label: "contact",    href: "#contact"    },
 ];
 
 const EXPERIENCE = [
   {
     role: "Software Engineer",
     company: "Ontopical",
+    note: "Got acquired by SOVRA backed by private equity KKR",
     period: "June 2025 – Present",
     description:
-      "At Ontopical, I'm building and deploying a multi-agent system using LLMs to automate the end-to-end collection of government documents. I support large-scale ML pipelines to extract structured insights from unstructured government datasets, and have evaluated multiple ML models on real-world datasets, boosting relevance accuracy by 28% in identifying opportunities. I work with unstructured public datasets to surface relevant opportunities for finding government opportunities using AI.",
-    tools: "Python, LLMs, Multi-agent Systems, ML Pipelines, Data Extraction, Government Data, AI, Machine Learning, Data Processing, Model Evaluation, Unstructured Data",
-    skills: [],
-    color: "purple",
-    icon: Brain,
-    logoUrl: "/lovable-uploads/sovra-logo.svg",
-    companyUrl: "https://ontopical.com"
+      "Developed APIs using PyMuPDF and Tesseract to extract text from PDFs, parsing native text layers where present and falling back to OCR on scanned pages. Built data pipelines converting unstructured sources — PDFs, Word, and varied formats — into structured, queryable records. Built and deployed a multi-agent system using LLMs to automate end-to-end government document collection. Developed full-stack internal tools with a Django backend and React/TypeScript frontend, letting the team review, triage, and act on surfaced opportunities. Automated Jira-to-Cursor ticket execution via MCP so tickets trigger cloud agents that complete tasks end to end.",
+    tools:
+      "Python, PyMuPDF, Tesseract, Django, React, TypeScript, LLMs, Multi-agent Systems, MCP, Jira, Cursor",
+    url: "",
   },
   {
-    role: "Founding AI Engineer",
+    role: "Founding Product Engineer",
     company: "AIgovsandbox",
+    note: "Fully built & launched — shut down after low market demand",
     period: "January 2025 – June 2025",
     description:
-      "At AIgovsandbox, I designed NLP pipelines for LLM-powered document search, risk flagging, and classification of policies. I fine-tuned prompt templates for various agent roles including risk assessor, compliance analyst, and sustainability auditor. I built FastAPI-based infrastructure and used OpenAI, Pinecone, and LangGraph to develop vectorized knowledge graphs. I deployed a full-stack MVP on AWS (Lambda, EC2, S3), ensuring performance and availability for enterprise use in this AI Governance SaaS startup.",
-    tools: "Python, FastAPI, OpenAI, Pinecone, LangGraph, AWS (Lambda, EC2, S3), NLP, LLM, Vector Databases, Knowledge Graphs, Prompt Engineering, SaaS, AI Governance, Risk Assessment, Compliance",
-    skills: [],
-    color: "blue",
-    icon: SquareCode,
-    logoUrl: "/lovable-uploads/ai-cube-logo.svg",
-    companyUrl: "https://aigovsandbox.com"
+      "Owned product direction end to end — set the roadmap, prioritized the build, and shipped the MVP from idea to launch — while leading a team of 3 engineers. Drove the product to enterprise-readiness for 2 enterprise users, owning the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and shipping without handoffs. Used Cursor as an AI pair-programming workflow to prototype, spec, and ship features faster.",
+    tools:
+      "Python, FastAPI, React, TypeScript, OpenAI, Pinecone, LangGraph, AWS, Vercel, NLP, LLM, Vector Databases, Prompt Engineering",
+    url: "",
   },
   {
-    role: "Founding AI/ML Engineer",
+    role: "Founding Engineer",
     company: "Xenara AI",
-    period: "October 2024 - Present",
+    note: "Pivoted from customer support SaaS to custom AI solutions for businesses",
+    period: "November 2024 – June 2025",
     description:
-      "At Xenara AI, I've driven the end-to-end development of AI-powered customer chatbots, managing progress in Jira and using Git/GitHub for version control and code reviews across 70+ pull requests. I designed and tested over 15 RESTful APIs with FastAPI, incorporating comprehensive unit and end-to-end tests to guarantee performance. I also architected scalable microservice backends in Node.js, containerized with Docker and Kubernetes, and deployed on AWS to support real-time data processing and ensure high availability.",
-    tools: "Python, FastAPI, RESTful APIs, MongoDB, Pinecone, Docker, Kubernetes, AWS (ECS, Lambda, Bedrock), Git/GitHub, Jira, Langchain, OpenAI, Azure AI Foundry, Node.js, Leadership, Technical Architect",
-    skills: [], // Removing separate skills array as we'll derive from tools
-    color: "blue",
-    icon: Brain,
-    logoUrl: "/lovable-uploads/14fc93c3-0867-4c90-a157-edc61b3c5290.png",
-    companyUrl: "https://www.linkedin.com/company/xenara-ai/"
+      "Owned product direction and roadmap for AI features, prioritizing from customer feedback and shipping prototype to production while leading a team of 5 engineers. Shipped AI assistant features — embeddings, GPT models, and real-time summarization — that streamlined customer support. Implemented hybrid retrieval pipeline (keyword + vector similarity) that improved response quality by 60% in production chatbots. Owned code quality across the team's production codebase — reviewing and merging 70+ PRs and tracking delivery in Jira.",
+    tools:
+      "Python, OpenAI API, GPT models, Vector Embeddings, FastAPI, MongoDB, Pinecone, Docker, AWS, Git/GitHub, Jira",
+    url: "https://www.linkedin.com/company/xenara-ai/",
   },
   {
     role: "Data Engineer",
     company: "City of Ottawa",
-    period: "May 2024 - December 2024",
+    note: "Modernizing legacy data infrastructure to cloud-native technology",
+    period: "May 2024 – December 2024",
     description:
-      "At the City of Ottawa, I designed and maintained automated ETL workflows in Azure Data Factory and Python/SQL, consolidating departmental data into a centralized PostgreSQL warehouse that boosted integration and accessibility by 40%. I built interactive Power BI dashboards for 50+ users and resolved 25+ high-priority tickets across Power BI, Azure Data Factory, and Microsoft Fabric with 95% accuracy. I also led the migration of IBM DataStage ETL to SAP BW/4HANA—saving $150K annually—and automated Azure DevOps migrations via REST APIs, SQL, and Bash to cut licensing costs by $3.5K/month.",
-    tools: "Python, SQL, Bash scripting, IBM, SAP, Azure (Data Factory, Synapse Analytics, power automate, power apps), Microsoft Fabric, Power BI, Azure DevOps, Data Pipelines, Data Warehousing, Data Modelling, ETL, ELT",
-    skills: [], // Removing separate skills array as we'll derive from tools
-    color: "purple",
-    icon: Database,
-    logoUrl: "/lovable-uploads/e20030ee-68c2-44e9-b4ab-00c94d9a0b18.png",
-    companyUrl: "https://www.linkedin.com/company/city-of-ottawa/"
+      "Facilitated the migration of IBM DataStage ETL to SAP BW/4HANA, achieving $150,000 in annual licensing savings. Automated Azure DevOps migrations using REST APIs, SQL, and Bash scripting, reducing licensing costs by $3,500/month.",
+    tools:
+      "Python, SQL, Bash, IBM DataStage, SAP BW/4HANA, Azure DevOps, Azure Data Factory, Microsoft Fabric, Power BI, REST APIs",
+    url: "https://www.linkedin.com/company/city-of-ottawa/",
   },
   {
     role: "Vice President of Software Development",
     company: "Capital Technology Network",
-    period: "November 2024 - Present",
+    note: "Largest hackathon in Ottawa & one of the largest in Canada",
+    period: "November 2024 – May 2025",
     description:
-      "As VP of Software Development, I lead a team of five in building and scaling our hackathon platform and community portal. I oversee Azure infrastructure management, ensure data quality and compliance, and coordinate open-source web app development—resulting in 3,500+ monthly visits and 15,000+ impressions. I've established CI/CD pipelines and modular architectures to support real-time judging, mentorship matchmaking, and project submissions for thousands of participants.",
-    tools: "React.js, Node.js, Azure Cloud, Docker, Kubernetes, Git/GitHub, CI/CD (GitHub Actions), Tailwind CSS, Team Leadership, Open Source, Infrastructure",
-    skills: [], // Removing separate skills array as we'll derive from tools
-    color: "green",
-    icon: Code,
-    logoUrl: "/lovable-uploads/6b5f5954-a1d3-4e54-b0d4-93d26a7cd49d.png",
-    companyUrl: "https://www.linkedin.com/company/hackthehill/"
+      "Led 5 developers building and shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
+    tools:
+      "TypeScript, React, Tailwind CSS, Vercel, Cloudflare, GitHub Actions, Open Source",
+    url: "https://www.linkedin.com/company/hackthehill/",
   },
   {
     role: "Data Architect",
     company: "Pyralume",
-    period: "January 2025 - April 2025",
+    note: "Built payment infrastructure for a startup",
+    period: "January 2025 – April 2025",
     description:
-      "At Pyralume, I architected a scalable video metadata system using Django and PostgreSQL, optimizing dimensional models and SQL queries to boost processing efficiency by 20%. I defined data modeling standards, implemented schema versioning, and leveraged Apache Kafka for ingesting telemetry streams—establishing a robust data governance framework that accelerated new source integrations by 40%.",
-    tools: "Python, Django, PostgreSQL, Apache Kafka, SQL, dbt, Terraform, AWS (S3, Glue, Redshift), System Architecture, dimensional models, data modeling",
-    skills: [], // Removing separate skills array as we'll derive from tools
-    color: "amber",
-    icon: Layers,
-    logoUrl: "/lovable-uploads/fb5e050a-a49f-42f3-b1b7-624b303c9dd1.png",
-    companyUrl: "https://www.linkedin.com/company/pyralume/"
+      "Owned money-movement infrastructure end to end — built Stripe-based billing, payment-rail integrations, and webhook-driven reconciliation (TypeScript) that automated cash collection for 30 customers.",
+    tools:
+      "TypeScript, Stripe, Python, PostgreSQL, Webhooks, AWS",
+    url: "https://www.linkedin.com/company/pyralume/",
   },
 ];
 
-export default function Index() {
-  return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
-      <MainHeader NAV_LINKS={NAV_LINKS} />
-      
-      <main className="flex-1 flex flex-col">
-        <section id="home" className="relative flex flex-col-reverse md:flex-row items-center justify-between min-h-[60vh] px-6 py-12 md:py-20 gap-8">
-          <div className="flex-1 flex justify-center md:justify-start items-center order-2 md:order-1 mb-6 md:mb-0">
-            <div className="w-48 h-48 md:w-[420px] md:h-[420px] rounded-full overflow-hidden border-4 border-white/20 shadow-glass bg-card relative">
-              <img
-                src="/lovable-uploads/07a3aa8a-a284-45ee-bf0b-bf0d0cde12e1.png"
-                alt="Sakshit Sharma"
-                className="object-cover w-full h-full"
-                style={{ objectPosition: "center" }}
-              />
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col items-center md:items-start justify-center md:pl-10 order-1 md:order-2">
-            <h1 className="text-3xl md:text-5xl font-bold mb-2 text-white text-center md:text-left">
-              {NAME}
-            </h1>
-            <div className="block text-xl md:text-2xl font-semibold text-white mb-4 h-10 w-full text-center md:text-left">
-              <TypingEffect
-                words={TYPING_WORDS}
-                typingDelay={220}
-                erasingDelay={90}
-                pauseDelay={1900}
-              />
-            </div>
-            <div className="flex gap-4 mb-4">
-              {SOCIALS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.url}
-                  aria-label={item.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={
-                    "transition-all duration-300 p-2 rounded-full border-2 border-white bg-card/70 text-white shadow-md " +
-                    "hover:scale-110 hover:border-yellow-300 hover:shadow-[0_0_24px_2px_rgba(254,247,205,0.6)] hover:bg-yellow-200/15"
-                  }
-                >
-                  <item.icon size={20} />
-                </a>
-              ))}
-            </div>
-            <p className="text-base font-normal text-white mb-3 max-w-xl text-center md:text-left">
-              {ABOUT}
-            </p>
-          </div>
-        </section>
 
-        <ExperienceTimeline EXPERIENCE={EXPERIENCE} />
-        <SkillsSection />
+export default function Index() {
+  const [form, setForm]       = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name || !form.email || !form.message) return;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+    if (!emailOk) { toast.error("Enter a valid email."); return; }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSuccess(true);
+      setForm({ name: "", email: "", message: "" });
+      toast.success("Message sent!");
+      setTimeout(() => setSuccess(false), 3500);
+    }, 1200);
+  };
+
+  return (
+    <div className="page-wrap">
+
+      {/* ── Nav ──────────────────────────────────── */}
+      <nav className="top-nav">
+        <span className="nav-name">SS</span>
+        <div className="nav-links">
+          {NAV.map(n => <a key={n.label} href={n.href}>{n.label}</a>)}
+        </div>
+      </nav>
+
+      {/* ── Hero ─────────────────────────────────── */}
+      <header className="hero">
+        <h1>{NAME}</h1>
+        <p className="tagline">{TAGLINE}</p>
+        <p className="bio">Founding engineer at multiple AI startups. I build full-stack products, data pipelines, and AI systems — and have led small teams from prototype to production. I love solving hard problems with ambitious people.</p>
+        <div className="social-row">
+          {SOCIALS.map((s, i) => (
+            <React.Fragment key={s.label}>
+              {i > 0 && <span className="sep">·</span>}
+              <a
+                href={s.url}
+                target={s.blank ? "_blank" : undefined}
+                rel={s.blank ? "noopener noreferrer" : undefined}
+              >
+                {s.label}
+              </a>
+            </React.Fragment>
+          ))}
+        </div>
+      </header>
+
+      <hr className="section-divider" />
+
+      {/* ── Experience ───────────────────────────── */}
+      <section id="experience">
+        <h2>Experience</h2>
+        <div className="exp-list">
+          {EXPERIENCE.map((exp, i) => (
+            <div key={i} className="exp-entry">
+              <div className="exp-header">
+                <span className="exp-role">{exp.role}</span>
+                <span className="exp-sep">&nbsp;at&nbsp;</span>
+                <a href={exp.url} target="_blank" rel="noopener noreferrer" className="exp-company">
+                  {exp.company}
+                </a>
+                <span className="exp-period">{exp.period}</span>
+              </div>
+              {exp.note && <p className="exp-note">{exp.note}</p>}
+              <p className="exp-desc">{exp.description}</p>
+              <p className="exp-tools">{exp.tools}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="section-divider" />
+
+      {/* ── Gallery ──────────────────────────────── */}
+      <section id="gallery">
+        <h2>Gallery</h2>
         <AchievementsGallery />
-        <ContactSection />
-      </main>
-      
-      <Footer />
-      <ScrollToTopButton />
+      </section>
+
+      <hr className="section-divider" />
+
+      {/* ── Contact ──────────────────────────────── */}
+      <section id="contact">
+        <h2>Contact</h2>
+        <p className="contact-intro">
+          Reach me at{" "}
+          <a href="mailto:sakshit2004@gmail.com">sakshit2004@gmail.com</a>
+          {" "}or use the form below.
+        </p>
+
+        {success ? (
+          <div className="success-msg">
+            <CheckCircle size={16} />
+            <span>Message sent — I'll be in touch.</span>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="cf-name">Name</label>
+                <input
+                  id="cf-name"
+                  type="text"
+                  value={form.name}
+                  onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="form-field">
+                <label htmlFor="cf-email">Email</label>
+                <input
+                  id="cf-email"
+                  type="email"
+                  value={form.email}
+                  onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-field">
+              <label htmlFor="cf-message">Message</label>
+              <textarea
+                id="cf-message"
+                rows={5}
+                value={form.message}
+                onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
+                placeholder="What's on your mind?"
+                required
+              />
+            </div>
+            <button type="submit" disabled={loading}>
+              {loading
+                ? <><Loader2 size={13} className="spin-icon" /> Sending…</>
+                : "Send message →"}
+            </button>
+          </form>
+        )}
+      </section>
+
+      {/* ── Footer ───────────────────────────────── */}
+      <footer className="site-footer">
+        <div className="footer-links">
+          {SOCIALS.map((s, i) => (
+            <React.Fragment key={s.label}>
+              {i > 0 && <span className="sep">·</span>}
+              <a
+                href={s.url}
+                target={s.blank ? "_blank" : undefined}
+                rel={s.blank ? "noopener noreferrer" : undefined}
+              >
+                {s.label}
+              </a>
+            </React.Fragment>
+          ))}
+        </div>
+        <p className="footer-copy">© 2025 Sakshit Sharma</p>
+      </footer>
+
     </div>
   );
 }
