@@ -27,10 +27,10 @@ const EXPERIENCE = [
     note: "Got acquired by SOVRA backed by private equity KKR",
     period: "June 2025 – Present",
     description:
-      "Developed APIs using PyMuPDF and Tesseract to extract text from PDFs, parsing native text layers where present and falling back to OCR on scanned pages. Built data pipelines converting unstructured sources — PDFs, Word, and varied formats — into structured, queryable records. Built and deployed a multi-agent system using LLMs to automate end-to-end government document collection. Developed full-stack internal tools with a Django backend and React/TypeScript frontend, letting the team review, triage, and act on surfaced opportunities. Automated Jira-to-Cursor ticket execution via MCP so tickets trigger cloud agents that complete tasks end to end.",
+      "Built PDF extraction APIs (PyMuPDF + Tesseract OCR), multi-agent LLM pipelines for automated government document collection, full-stack internal tools (Django + React/TypeScript), and Jira-to-Cursor MCP automation that routes tickets to cloud agents end to end.",
     tools:
       "Python, PyMuPDF, Tesseract, Django, React, TypeScript, LLMs, Multi-agent Systems, MCP, Jira, Cursor",
-    url: "",
+    url: "https://www.linkedin.com/company/ontopical/",
   },
   {
     role: "Founding Product Engineer",
@@ -38,10 +38,10 @@ const EXPERIENCE = [
     note: "Fully built & launched — shut down after low market demand",
     period: "January 2025 – June 2025",
     description:
-      "Owned product direction end to end — set the roadmap, prioritized the build, and shipped the MVP from idea to launch — while leading a team of 3 engineers. Drove the product to enterprise-readiness for 2 enterprise users, owning the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and shipping without handoffs. Used Cursor as an AI pair-programming workflow to prototype, spec, and ship features faster.",
+      "Set the roadmap and shipped the MVP solo from idea to launch, leading a team of 3. Owned the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and drove two enterprise deployments without handoffs.",
     tools:
       "Python, FastAPI, React, TypeScript, OpenAI, Pinecone, LangGraph, AWS, Vercel, NLP, LLM, Vector Databases, Prompt Engineering",
-    url: "",
+    url: "https://www.linkedin.com/company/aigovsandbox/",
   },
   {
     role: "Founding Engineer",
@@ -49,10 +49,10 @@ const EXPERIENCE = [
     note: "Pivoted from customer support SaaS to custom AI solutions for businesses",
     period: "November 2024 – June 2025",
     description:
-      "Owned product direction and roadmap for AI features, prioritizing from customer feedback and shipping prototype to production while leading a team of 5 engineers. Shipped AI assistant features — embeddings, GPT models, and real-time summarization — that streamlined customer support. Implemented hybrid retrieval pipeline (keyword + vector similarity) that improved response quality by 60% in production chatbots. Owned code quality across the team's production codebase — reviewing and merging 70+ PRs and tracking delivery in Jira.",
+      "Led a team of 5 shipping AI assistant features — embeddings, GPT models, real-time summarization — and a hybrid retrieval pipeline (keyword + vector) that improved chatbot response quality by 60% in production.",
     tools:
       "Python, OpenAI API, GPT models, Vector Embeddings, FastAPI, MongoDB, Pinecone, Docker, AWS, Git/GitHub, Jira",
-    url: "https://www.linkedin.com/company/xenara-ai/",
+    url: "https://www.linkedin.com/company/xenara-inc/",
   },
   {
     role: "Data Engineer",
@@ -60,7 +60,7 @@ const EXPERIENCE = [
     note: "Modernizing legacy data infrastructure to cloud-native technology",
     period: "May 2024 – December 2024",
     description:
-      "Facilitated the migration of IBM DataStage ETL to SAP BW/4HANA, achieving $150,000 in annual licensing savings. Automated Azure DevOps migrations using REST APIs, SQL, and Bash scripting, reducing licensing costs by $3,500/month.",
+      "Migrated IBM DataStage ETL to SAP BW/4HANA ($150K in annual licensing savings) and automated Azure DevOps migrations with REST APIs and Bash scripting, cutting licensing costs by $3,500/month.",
     tools:
       "Python, SQL, Bash, IBM DataStage, SAP BW/4HANA, Azure DevOps, Azure Data Factory, Microsoft Fabric, Power BI, REST APIs",
     url: "https://www.linkedin.com/company/city-of-ottawa/",
@@ -71,7 +71,7 @@ const EXPERIENCE = [
     note: "Largest hackathon in Ottawa & one of the largest in Canada",
     period: "November 2024 – May 2025",
     description:
-      "Led 5 developers building and shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
+      "Led 5 developers shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
     tools:
       "TypeScript, React, Tailwind CSS, Vercel, Cloudflare, GitHub Actions, Open Source",
     url: "https://www.linkedin.com/company/hackthehill/",
@@ -82,7 +82,7 @@ const EXPERIENCE = [
     note: "Built payment infrastructure for a startup",
     period: "January 2025 – April 2025",
     description:
-      "Owned money-movement infrastructure end to end — built Stripe-based billing, payment-rail integrations, and webhook-driven reconciliation (TypeScript) that automated cash collection for 30 customers.",
+      "Owned money-movement infrastructure end to end — Stripe billing, payment-rail integrations, and webhook-driven reconciliation that automated cash collection for 30 customers.",
     tools:
       "TypeScript, Stripe, Python, PostgreSQL, Webhooks, AWS",
     url: "https://www.linkedin.com/company/pyralume/",
@@ -125,7 +125,7 @@ export default function Index() {
       <header className="hero">
         <h1>{NAME}</h1>
         <p className="tagline">{TAGLINE}</p>
-        <p className="bio">Founding engineer at multiple AI startups. I build full-stack products, data pipelines, and AI systems — and have led small teams from prototype to production. I love solving hard problems with ambitious people.</p>
+        <p className="bio">I love solving hard problems with ambitious people.</p>
         <div className="social-row">
           {SOCIALS.map((s, i) => (
             <React.Fragment key={s.label}>
