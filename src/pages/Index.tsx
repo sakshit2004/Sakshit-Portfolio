@@ -27,7 +27,7 @@ const EXPERIENCE = [
     note: "Got acquired by SOVRA backed by private equity KKR",
     period: "June 2025 – Present",
     description:
-      "Built PDF extraction APIs (PyMuPDF + Tesseract OCR), multi-agent LLM pipelines for automated government document collection, full-stack internal tools (Django + React/TypeScript), and Jira-to-Cursor MCP automation that routes tickets to cloud agents end to end.",
+      "Building the data and automation backbone of a government-intelligence platform. I turn mixed media like PDFs, audio, and video into structured, searchable records using PyMuPDF, Tesseract OCR, and Whisper/AWS Transcribe. Separately, I built and deployed a multi-agent LLM system that automates the end-to-end collection of government documents. I also ship the full-stack internal tools (Django + React) the team uses to act on opportunities, and wired up a Jira-to-Cursor MCP pipeline so tickets trigger cloud agents that complete work autonomously.",
     tools:
       "Python, PyMuPDF, Tesseract, Django, React, TypeScript, LLMs, Multi-agent Systems, MCP, Jira, Cursor",
     url: "https://www.linkedin.com/company/ontopical/",
@@ -38,7 +38,7 @@ const EXPERIENCE = [
     note: "Fully built & launched — shut down after low market demand",
     period: "January 2025 – June 2025",
     description:
-      "Set the roadmap and shipped the MVP solo from idea to launch, leading a team of 3. Owned the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and drove two enterprise deployments without handoffs.",
+      "Led product direction end to end for an AI governance startup, defining the roadmap and shipping the MVP with a team of 3. I owned the full stack, including React/TypeScript on Vercel, FastAPI on AWS, and an OpenAI plus Pinecone retrieval layer orchestrated with LangGraph, and drove it to enterprise-readiness for two enterprise users, using Cursor as an AI pair-programming workflow to prototype and ship faster.",
     tools:
       "Python, FastAPI, React, TypeScript, OpenAI, Pinecone, LangGraph, AWS, Vercel, NLP, LLM, Vector Databases, Prompt Engineering",
     url: "https://www.linkedin.com/company/aigovsandbox/",
@@ -49,7 +49,7 @@ const EXPERIENCE = [
     note: "Pivoted from customer support SaaS to custom AI solutions for businesses",
     period: "November 2024 – June 2025",
     description:
-      "Led a team of 5 shipping AI assistant features — embeddings, GPT models, real-time summarization — and a hybrid retrieval pipeline (keyword + vector) that improved chatbot response quality by 60% in production.",
+      "Owned product direction and the AI roadmap while leading a team of 5, prioritizing from customer feedback and shipping to production. I built AI assistant features like embeddings, GPT models, and real-time summarization, plus a hybrid keyword-plus-vector retrieval pipeline that lifted chatbot response quality by 60% in production. Alongside the product work, I guarded code quality across the team's codebase, reviewing and merging 70+ PRs and tracking delivery in Jira.",
     tools:
       "Python, OpenAI API, GPT models, Vector Embeddings, FastAPI, MongoDB, Pinecone, Docker, AWS, Git/GitHub, Jira",
     url: "https://www.linkedin.com/company/xenara-inc/",
@@ -60,7 +60,7 @@ const EXPERIENCE = [
     note: "Modernizing legacy data infrastructure to cloud-native technology",
     period: "May 2024 – December 2024",
     description:
-      "Migrated IBM DataStage ETL to SAP BW/4HANA ($150K in annual licensing savings) and automated Azure DevOps migrations with REST APIs and Bash scripting, cutting licensing costs by $3,500/month.",
+      "Modernized the city's legacy data infrastructure toward cloud-native tooling. I led the migration of IBM DataStage ETL to SAP BW/4HANA, saving $150,000 a year in licensing, and automated Azure DevOps migrations with REST APIs, SQL, and Bash, cutting another $3,500/month. I also built Python/SQL ETL workflows that ingest large datasets into PostgreSQL on a daily Cron schedule, and tuned queries and indexing to reduce data-sync delays by 60%.",
     tools:
       "Python, SQL, Bash, IBM DataStage, SAP BW/4HANA, Azure DevOps, Azure Data Factory, Microsoft Fabric, Power BI, REST APIs",
     url: "https://www.linkedin.com/company/city-of-ottawa/",
@@ -71,7 +71,7 @@ const EXPERIENCE = [
     note: "Largest hackathon in Ottawa & one of the largest in Canada",
     period: "November 2024 – May 2025",
     description:
-      "Led 5 developers shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
+      "Led 5 developers building and shipping open-source web apps (TypeScript, React, Tailwind, Vercel) for Ottawa's largest hackathon, with Cloudflare securing endpoints against scraping. I set the engineering culture too, promoting clean code, Agile practices, and peer review across every project.",
     tools:
       "TypeScript, React, Tailwind CSS, Vercel, Cloudflare, GitHub Actions, Open Source",
     url: "https://www.linkedin.com/company/hackthehill/",
@@ -82,7 +82,7 @@ const EXPERIENCE = [
     note: "Built payment infrastructure for a startup",
     period: "January 2025 – April 2025",
     description:
-      "Owned money-movement infrastructure end to end — Stripe billing, payment-rail integrations, and webhook-driven reconciliation that automated cash collection for 30 customers.",
+      "Owned money-movement infrastructure end to end for an early-stage startup, building Stripe-based billing, payment-rail integrations, and webhook-driven reconciliation in TypeScript that automated payment collection for 30 customers.",
     tools:
       "TypeScript, Stripe, Python, PostgreSQL, Webhooks, AWS",
     url: "https://www.linkedin.com/company/pyralume/",
