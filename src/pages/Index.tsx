@@ -15,66 +15,56 @@ const SOCIALS = [
 ];
 
 const NAV = [
-  { label: "built",   href: "#built"   },
-  { label: "reading", href: "#reading" },
   { label: "writing", href: "#writing" },
+  { label: "reading", href: "#reading" },
   { label: "gallery", href: "#gallery" },
   { label: "contact", href: "#contact" },
 ];
 
-const BUILDS = [
+const MY_ARTICLES = [
   {
-    title: "Government document pipeline",
-    where: "Ontopical → Sovra (KKR)",
-    url: "https://www.linkedin.com/company/ontopical/",
-    tag: "acquired",
-    what:
-      "15 people were hand-extracting fields from RFPs, bids and council minutes. I'm rebuilding it as a cheapest-first pipeline: a classifier trained on 15 years of their labelled work, then regex → BM25 → vectors, with an LLM only on the last few chunks.",
-    result: "Target: ~10¢ per notice. Ontopical was acquired by Sovra (KKR-backed) along the way.",
-  },
-  {
-    title: "Multi-agent AI governance scorer",
-    where: "AIgovsandbox",
-    url: "https://www.linkedin.com/company/aigovsandbox/",
-    tag: "0→1 · shut down",
-    what:
-      "Scored enterprise AI projects against NIST, the EU AI Act and other frameworks — one retrieval agent per framework, an intake agent routing client documents between them.",
-    result: "Shipped two enterprise deployments, then shut it down: governance was a nice-to-have. Lesson: prove demand before writing code.",
-  },
-  {
-    title: "Support bot retrieval",
-    where: "Xenara AI",
-    url: "https://www.linkedin.com/company/xenara-inc/",
-    tag: "founding eng · pivoted",
-    what:
-      "Hybrid keyword + vector retrieval for a B2B support bot where a wrong answer was worse than no answer.",
-    result: "Well-funded competitors got there first; the company pivoted to custom AI work.",
-  },
-  {
-    title: "Billing & reconciliation",
-    where: "Pyralume",
-    url: "https://www.linkedin.com/company/pyralume/",
-    tag: "payments",
-    what: "Stripe billing, payment-rail integrations and webhook-driven reconciliation.",
-    result: "30 customers billed and reconciled without anyone chasing invoices.",
+    title: "Thoughts on Decision Models: JEV, KEV, etc.",
+    url: "https://www.linkedin.com/pulse/thoughts-decision-models-jev-kev-etc-sakshit-sharma-jaaac/",
   },
 ];
 
-const ALSO = [
-  { label: "City of Ottawa — data eng, $150K/yr in licensing cut", url: "https://www.linkedin.com/company/city-of-ottawa/" },
-  { label: "Hack the Hill — engineering lead",                    url: "https://www.linkedin.com/company/hackthehill/"   },
-];
-
-// TODO: replace the placeholder entries below with real books.
 const BOOKS = [
-  { title: "Book title", author: "Author", take: "One line on what stuck with you." },
-  { title: "Book title", author: "Author", take: "" },
+  {
+    title: "Zero to One",
+    author: "Peter Thiel",
+    note: "Build something new, not a copy — and aim for a monopoly on a problem nobody else sees.",
+  },
+  {
+    title: "The Lean Startup",
+    author: "Eric Ries",
+    note: "Build, measure, learn. Test demand before you build the whole thing.",
+  },
+  {
+    title: "Shoe Dog",
+    author: "Phil Knight",
+    note: "Nike's founder on the years of near-bankruptcy before anyone knew the name.",
+  },
+  {
+    title: "Elon Musk",
+    author: "Ashlee Vance",
+    note: "How Tesla and SpaceX were built — and what that level of intensity costs.",
+  },
+  {
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    note: "Taste, focus and product obsession, warts and all.",
+  },
 ];
 
-// TODO: replace the placeholder entries below with real articles.
-const ARTICLES = [
-  { title: "Article title", date: "2025", url: "#" },
-  { title: "Article title", date: "2025", url: "#" },
+const ESSAYS = [
+  { title: "Do Things That Don't Scale",     author: "Paul Graham", url: "https://paulgraham.com/ds.html"           },
+  { title: "Startup = Growth",               author: "Paul Graham", url: "https://paulgraham.com/growth.html"       },
+  { title: "Schlep Blindness",               author: "Paul Graham", url: "https://paulgraham.com/schlep.html"       },
+  { title: "Default Alive or Default Dead?", author: "Paul Graham", url: "https://paulgraham.com/aord.html"         },
+  { title: "Founder Mode",                   author: "Paul Graham", url: "https://paulgraham.com/foundermode.html"  },
+  { title: "How to Do Great Work",           author: "Paul Graham", url: "https://paulgraham.com/greatwork.html"    },
+  { title: "Services: The New Software",     author: "Julien Bek, Sequoia", url: "https://sequoiacap.com/article/services-the-new-software" },
+  { title: "How To Be Successful",           author: "Sam Altman",  url: "https://blog.samaltman.com/how-to-be-successful" },
 ];
 
 
@@ -132,46 +122,13 @@ export default function Index() {
 
       <hr className="section-divider" />
 
-      {/* ── Built ────────────────────────────────── */}
-      <section id="built">
-        <h2>Things I've built</h2>
-        <div className="build-list">
-          {BUILDS.map(b => (
-            <div key={b.title} className="build-entry">
-              <div className="build-header">
-                <span className="build-title">{b.title}</span>
-                <span className="build-tag">{b.tag}</span>
-              </div>
-              <a href={b.url} target="_blank" rel="noopener noreferrer" className="build-where">
-                {b.where}
-              </a>
-              <p className="build-what">{b.what}</p>
-              <p className="build-result">→ {b.result}</p>
-            </div>
-          ))}
-        </div>
-        <p className="build-also">
-          Also:{" "}
-          {ALSO.map((x, i) => (
-            <React.Fragment key={x.label}>
-              {i > 0 && <span className="sep"> · </span>}
-              <a href={x.url} target="_blank" rel="noopener noreferrer">{x.label}</a>
-            </React.Fragment>
-          ))}
-        </p>
-      </section>
-
-      <hr className="section-divider" />
-
-      {/* ── Reading ──────────────────────────────── */}
-      <section id="reading">
-        <h2>Reading</h2>
+      {/* ── Writing ──────────────────────────────── */}
+      <section id="writing">
+        <h2>Writing</h2>
         <ul className="plain-list">
-          {BOOKS.map((book, i) => (
-            <li key={i}>
-              <span className="item-title">{book.title}</span>
-              <span className="item-meta"> — {book.author}</span>
-              {book.take && <p className="item-note">{book.take}</p>}
+          {MY_ARTICLES.map(article => (
+            <li key={article.url}>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
             </li>
           ))}
         </ul>
@@ -179,14 +136,25 @@ export default function Index() {
 
       <hr className="section-divider" />
 
-      {/* ── Writing ──────────────────────────────── */}
-      <section id="writing">
-        <h2>Writing</h2>
+      {/* ── Reading ──────────────────────────────── */}
+      <section id="reading">
+        <h2>Books I recommend</h2>
         <ul className="plain-list">
-          {ARTICLES.map((article, i) => (
-            <li key={i} className="article-row">
-              <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
-              <span className="item-date">{article.date}</span>
+          {BOOKS.map(book => (
+            <li key={book.title}>
+              <span className="item-title">{book.title}</span>
+              <span className="item-meta"> — {book.author}</span>
+              <p className="item-note">{book.note}</p>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="subsection-heading">Essays I recommend</h2>
+        <ul className="plain-list">
+          {ESSAYS.map(essay => (
+            <li key={essay.url}>
+              <a href={essay.url} target="_blank" rel="noopener noreferrer">{essay.title}</a>
+              <span className="item-meta"> — {essay.author}</span>
             </li>
           ))}
         </ul>

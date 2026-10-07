@@ -213,65 +213,6 @@ section h2 {
   margin-bottom: 1.75rem;
 }
 
-/* ── Built ───────────────────────────────────────── */
-
-.build-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.build-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.build-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.25rem 0.75rem;
-}
-
-.build-title {
-  font-weight: 600;
-  color: hsl(var(--foreground));
-}
-
-.build-tag {
-  font-family: 'Courier New', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  color: hsl(214 82% 75%);
-  background: hsl(214 60% 18% / 0.55);
-  border: 1px solid hsl(214 60% 30% / 0.5);
-  padding: 0.05rem 0.5rem;
-}
-
-.build-where {
-  align-self: flex-start;
-  font-size: 0.85rem;
-}
-
-.build-what {
-  color: hsl(var(--foreground));
-  font-size: 0.94rem;
-  line-height: 1.7;
-}
-
-.build-result {
-  color: hsl(var(--secondary-foreground));
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.build-also {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: hsl(var(--muted-foreground));
-}
-
 /* ── Reading / Writing ───────────────────────────── */
 
 .plain-list {
@@ -288,6 +229,10 @@ section h2 {
   color: hsl(var(--foreground));
 }
 
+section h2.subsection-heading {
+  margin-top: 2.75rem;
+}
+
 .item-meta {
   color: hsl(var(--muted-foreground));
 }
@@ -298,19 +243,6 @@ section h2 {
   line-height: 1.6;
 }
 
-.article-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-}
-
-.item-date {
-  font-family: 'Courier New', monospace;
-  font-size: 0.75rem;
-  color: hsl(var(--muted-foreground));
-  white-space: nowrap;
-}
 
 /* ── Skills ──────────────────────────────────────── */
 
