@@ -136,6 +136,7 @@ export default function Index() {
               <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
             </li>
           ))}
+          <li className="item-meta">A lot more coming soon :)</li>
         </ul>
       </section>
 
