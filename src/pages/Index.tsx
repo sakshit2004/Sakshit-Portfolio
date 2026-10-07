@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Loader2, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import { AchievementsGallery } from "@/components/AchievementsGallery";
+import { BlackHole } from "@/components/BlackHole";
 
 const NAME = "Sakshit Sharma";
 const TAGLINE = "Startups · Product · Engineering";
@@ -171,6 +172,7 @@ export default function Index() {
       {/* ── Gallery ──────────────────────────────── */}
       <section id="gallery">
         <h2>Gallery</h2>
+        <BlackHole />
         <AchievementsGallery />
       </section>
 
