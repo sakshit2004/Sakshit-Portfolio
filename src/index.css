@@ -213,73 +213,103 @@ section h2 {
   margin-bottom: 1.75rem;
 }
 
-/* ── Experience ──────────────────────────────────── */
+/* ── Built ───────────────────────────────────────── */
 
-.exp-list {
+.build-list {
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: 2rem;
 }
 
-.exp-entry {
+.build-entry {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.25rem;
 }
 
-.exp-header {
+.build-header {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0 0.25em;
+  gap: 0.25rem 0.75rem;
 }
 
-.exp-role {
+.build-title {
   font-weight: 600;
   color: hsl(var(--foreground));
 }
 
-.exp-sep {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9em;
-}
-
-.exp-company {
-  color: hsl(var(--accent));
-}
-
-.exp-period {
-  font-family: 'Courier New', monospace;
-  font-size: 0.75em;
-  color: hsl(var(--muted-foreground));
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-.exp-note {
-  display: inline-block;
-  align-self: flex-start;
+.build-tag {
   font-family: 'Courier New', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   color: hsl(214 82% 75%);
   background: hsl(214 60% 18% / 0.55);
   border: 1px solid hsl(214 60% 30% / 0.5);
-  padding: 0.15rem 0.55rem;
-  margin-top: 0.1rem;
+  padding: 0.05rem 0.5rem;
 }
 
-.exp-desc {
+.build-where {
+  align-self: flex-start;
+  font-size: 0.85rem;
+}
+
+.build-what {
   color: hsl(var(--foreground));
   font-size: 0.94rem;
   line-height: 1.7;
 }
 
-.exp-tools {
-  font-family: 'Courier New', monospace;
-  font-size: 0.76rem;
-  color: hsl(var(--muted-foreground));
+.build-result {
+  color: hsl(var(--secondary-foreground));
+  font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.build-also {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* ── Reading / Writing ───────────────────────────── */
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.item-title {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.item-meta {
+  color: hsl(var(--muted-foreground));
+}
+
+.item-note {
+  font-size: 0.88rem;
+  color: hsl(var(--secondary-foreground));
+  line-height: 1.6;
+}
+
+.article-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.item-date {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
 }
 
 /* ── Skills ──────────────────────────────────────── */
@@ -495,13 +525,6 @@ section h2 {
 
   .form-row {
     grid-template-columns: 1fr;
-  }
-
-  .exp-period {
-    margin-left: 0;
-    display: block;
-    width: 100%;
-    margin-top: 0.1rem;
   }
 
   .gallery-grid {

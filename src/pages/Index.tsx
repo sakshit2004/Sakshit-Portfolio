@@ -15,78 +15,66 @@ const SOCIALS = [
 ];
 
 const NAV = [
-  { label: "experience", href: "#experience" },
-  { label: "gallery",    href: "#gallery"    },
-  { label: "contact",    href: "#contact"    },
+  { label: "built",   href: "#built"   },
+  { label: "reading", href: "#reading" },
+  { label: "writing", href: "#writing" },
+  { label: "gallery", href: "#gallery" },
+  { label: "contact", href: "#contact" },
 ];
 
-const EXPERIENCE = [
+const BUILDS = [
   {
-    role: "Software Engineer",
-    company: "Ontopical",
-    note: "Got acquired by SOVRA backed by private equity KKR",
-    period: "June 2025 – Present",
-    description:
-      "Built PDF extraction APIs (PyMuPDF + Tesseract OCR), multi-agent LLM pipelines for automated government document collection, full-stack internal tools (Django + React/TypeScript), and Jira-to-Cursor MCP automation that routes tickets to cloud agents end to end.",
-    tools:
-      "Python, PyMuPDF, Tesseract, Django, React, TypeScript, LLMs, Multi-agent Systems, MCP, Jira, Cursor",
+    title: "Government document pipeline",
+    where: "Ontopical → Sovra (KKR)",
     url: "https://www.linkedin.com/company/ontopical/",
+    tag: "acquired",
+    what:
+      "15 people were hand-extracting fields from RFPs, bids and council minutes. I'm rebuilding it as a cheapest-first pipeline: a classifier trained on 15 years of their labelled work, then regex → BM25 → vectors, with an LLM only on the last few chunks.",
+    result: "Target: ~10¢ per notice. Ontopical was acquired by Sovra (KKR-backed) along the way.",
   },
   {
-    role: "Founding Product Engineer",
-    company: "AIgovsandbox",
-    note: "Fully built & launched — shut down after low market demand",
-    period: "January 2025 – June 2025",
-    description:
-      "Set the roadmap and shipped the MVP solo from idea to launch, leading a team of 3. Owned the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and drove two enterprise deployments without handoffs.",
-    tools:
-      "Python, FastAPI, React, TypeScript, OpenAI, Pinecone, LangGraph, AWS, Vercel, NLP, LLM, Vector Databases, Prompt Engineering",
+    title: "Multi-agent AI governance scorer",
+    where: "AIgovsandbox",
     url: "https://www.linkedin.com/company/aigovsandbox/",
+    tag: "0→1 · shut down",
+    what:
+      "Scored enterprise AI projects against NIST, the EU AI Act and other frameworks — one retrieval agent per framework, an intake agent routing client documents between them.",
+    result: "Shipped two enterprise deployments, then shut it down: governance was a nice-to-have. Lesson: prove demand before writing code.",
   },
   {
-    role: "Founding Engineer",
-    company: "Xenara AI",
-    note: "Pivoted from customer support SaaS to custom AI solutions for businesses",
-    period: "November 2024 – June 2025",
-    description:
-      "Led a team of 5 shipping AI assistant features — embeddings, GPT models, real-time summarization — and a hybrid retrieval pipeline (keyword + vector) that improved chatbot response quality by 60% in production.",
-    tools:
-      "Python, OpenAI API, GPT models, Vector Embeddings, FastAPI, MongoDB, Pinecone, Docker, AWS, Git/GitHub, Jira",
+    title: "Support bot retrieval",
+    where: "Xenara AI",
     url: "https://www.linkedin.com/company/xenara-inc/",
+    tag: "founding eng · pivoted",
+    what:
+      "Hybrid keyword + vector retrieval for a B2B support bot where a wrong answer was worse than no answer.",
+    result: "Well-funded competitors got there first; the company pivoted to custom AI work.",
   },
   {
-    role: "Data Engineer",
-    company: "City of Ottawa",
-    note: "Modernizing legacy data infrastructure to cloud-native technology",
-    period: "May 2024 – December 2024",
-    description:
-      "Migrated IBM DataStage ETL to SAP BW/4HANA ($150K in annual licensing savings) and automated Azure DevOps migrations with REST APIs and Bash scripting, cutting licensing costs by $3,500/month.",
-    tools:
-      "Python, SQL, Bash, IBM DataStage, SAP BW/4HANA, Azure DevOps, Azure Data Factory, Microsoft Fabric, Power BI, REST APIs",
-    url: "https://www.linkedin.com/company/city-of-ottawa/",
-  },
-  {
-    role: "Vice President of Software Development",
-    company: "Capital Technology Network",
-    note: "Largest hackathon in Ottawa & one of the largest in Canada",
-    period: "November 2024 – May 2025",
-    description:
-      "Led 5 developers shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
-    tools:
-      "TypeScript, React, Tailwind CSS, Vercel, Cloudflare, GitHub Actions, Open Source",
-    url: "https://www.linkedin.com/company/hackthehill/",
-  },
-  {
-    role: "Data Architect",
-    company: "Pyralume",
-    note: "Built payment infrastructure for a startup",
-    period: "January 2025 – April 2025",
-    description:
-      "Owned money-movement infrastructure end to end — Stripe billing, payment-rail integrations, and webhook-driven reconciliation that automated cash collection for 30 customers.",
-    tools:
-      "TypeScript, Stripe, Python, PostgreSQL, Webhooks, AWS",
+    title: "Billing & reconciliation",
+    where: "Pyralume",
     url: "https://www.linkedin.com/company/pyralume/",
+    tag: "payments",
+    what: "Stripe billing, payment-rail integrations and webhook-driven reconciliation.",
+    result: "30 customers billed and reconciled without anyone chasing invoices.",
   },
+];
+
+const ALSO = [
+  { label: "City of Ottawa — data eng, $150K/yr in licensing cut", url: "https://www.linkedin.com/company/city-of-ottawa/" },
+  { label: "Hack the Hill — engineering lead",                    url: "https://www.linkedin.com/company/hackthehill/"   },
+];
+
+// TODO: replace the placeholder entries below with real books.
+const BOOKS = [
+  { title: "Book title", author: "Author", take: "One line on what stuck with you." },
+  { title: "Book title", author: "Author", take: "" },
+];
+
+// TODO: replace the placeholder entries below with real articles.
+const ARTICLES = [
+  { title: "Article title", date: "2025", url: "#" },
+  { title: "Article title", date: "2025", url: "#" },
 ];
 
 
@@ -144,26 +132,64 @@ export default function Index() {
 
       <hr className="section-divider" />
 
-      {/* ── Experience ───────────────────────────── */}
-      <section id="experience">
-        <h2>Experience</h2>
-        <div className="exp-list">
-          {EXPERIENCE.map((exp, i) => (
-            <div key={i} className="exp-entry">
-              <div className="exp-header">
-                <span className="exp-role">{exp.role}</span>
-                <span className="exp-sep">&nbsp;at&nbsp;</span>
-                <a href={exp.url} target="_blank" rel="noopener noreferrer" className="exp-company">
-                  {exp.company}
-                </a>
-                <span className="exp-period">{exp.period}</span>
+      {/* ── Built ────────────────────────────────── */}
+      <section id="built">
+        <h2>Things I've built</h2>
+        <div className="build-list">
+          {BUILDS.map(b => (
+            <div key={b.title} className="build-entry">
+              <div className="build-header">
+                <span className="build-title">{b.title}</span>
+                <span className="build-tag">{b.tag}</span>
               </div>
-              {exp.note && <p className="exp-note">{exp.note}</p>}
-              <p className="exp-desc">{exp.description}</p>
-              <p className="exp-tools">{exp.tools}</p>
+              <a href={b.url} target="_blank" rel="noopener noreferrer" className="build-where">
+                {b.where}
+              </a>
+              <p className="build-what">{b.what}</p>
+              <p className="build-result">→ {b.result}</p>
             </div>
           ))}
         </div>
+        <p className="build-also">
+          Also:{" "}
+          {ALSO.map((x, i) => (
+            <React.Fragment key={x.label}>
+              {i > 0 && <span className="sep"> · </span>}
+              <a href={x.url} target="_blank" rel="noopener noreferrer">{x.label}</a>
+            </React.Fragment>
+          ))}
+        </p>
+      </section>
+
+      <hr className="section-divider" />
+
+      {/* ── Reading ──────────────────────────────── */}
+      <section id="reading">
+        <h2>Reading</h2>
+        <ul className="plain-list">
+          {BOOKS.map((book, i) => (
+            <li key={i}>
+              <span className="item-title">{book.title}</span>
+              <span className="item-meta"> — {book.author}</span>
+              {book.take && <p className="item-note">{book.take}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <hr className="section-divider" />
+
+      {/* ── Writing ──────────────────────────────── */}
+      <section id="writing">
+        <h2>Writing</h2>
+        <ul className="plain-list">
+          {ARTICLES.map((article, i) => (
+            <li key={i} className="article-row">
+              <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
+              <span className="item-date">{article.date}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <hr className="section-divider" />
