@@ -63,8 +63,13 @@ const ESSAYS = [
   { title: "Default Alive or Default Dead?", author: "Paul Graham", url: "https://paulgraham.com/aord.html"         },
   { title: "Founder Mode",                   author: "Paul Graham", url: "https://paulgraham.com/foundermode.html"  },
   { title: "How to Do Great Work",           author: "Paul Graham", url: "https://paulgraham.com/greatwork.html"    },
+  { title: "How to Get Startup Ideas",       author: "Paul Graham", url: "https://paulgraham.com/startupideas.html" },
+  { title: "Why to Not Not Start a Startup", author: "Paul Graham", url: "https://paulgraham.com/notnot.html"       },
+  { title: "The Only Thing That Matters",    author: "Marc Andreessen", url: "https://pmarchive.com/guide_to_startups_part4.html" },
   { title: "Services: The New Software",     author: "Julien Bek, Sequoia", url: "https://sequoiacap.com/article/services-the-new-software" },
   { title: "How To Be Successful",           author: "Sam Altman",  url: "https://blog.samaltman.com/how-to-be-successful" },
+  { title: "Startup Playbook",               author: "Sam Altman",  url: "https://playbook.samaltman.com/" },
+  { title: "Fast",                           author: "Patrick Collison", url: "https://patrickcollison.com/fast" },
 ];
 
 
