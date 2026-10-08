@@ -15,78 +15,61 @@ const SOCIALS = [
 ];
 
 const NAV = [
-  { label: "experience", href: "#experience" },
-  { label: "gallery",    href: "#gallery"    },
-  { label: "contact",    href: "#contact"    },
+  { label: "writing", href: "#writing" },
+  { label: "reading", href: "#reading" },
+  { label: "gallery", href: "#gallery" },
+  { label: "contact", href: "#contact" },
 ];
 
-const EXPERIENCE = [
+const MY_ARTICLES = [
   {
-    role: "Software Engineer",
-    company: "Ontopical",
-    note: "Got acquired by SOVRA backed by private equity KKR",
-    period: "June 2025 – Present",
-    description:
-      "Built PDF extraction APIs (PyMuPDF + Tesseract OCR), multi-agent LLM pipelines for automated government document collection, full-stack internal tools (Django + React/TypeScript), and Jira-to-Cursor MCP automation that routes tickets to cloud agents end to end.",
-    tools:
-      "Python, PyMuPDF, Tesseract, Django, React, TypeScript, LLMs, Multi-agent Systems, MCP, Jira, Cursor",
-    url: "https://www.linkedin.com/company/ontopical/",
+    title: "Thoughts on Decision Models: JEV, KEV, etc.",
+    url: "https://www.linkedin.com/pulse/thoughts-decision-models-jev-kev-etc-sakshit-sharma-jaaac/",
+  },
+];
+
+const BOOKS = [
+  {
+    title: "Zero to One",
+    author: "Peter Thiel",
+    note: "Build something new, not a copy — and aim for a monopoly on a problem nobody else sees.",
   },
   {
-    role: "Founding Product Engineer",
-    company: "AIgovsandbox",
-    note: "Fully built & launched — shut down after low market demand",
-    period: "January 2025 – June 2025",
-    description:
-      "Set the roadmap and shipped the MVP solo from idea to launch, leading a team of 3. Owned the full-stack build (React/TypeScript on Vercel, FastAPI on AWS) and drove two enterprise deployments without handoffs.",
-    tools:
-      "Python, FastAPI, React, TypeScript, OpenAI, Pinecone, LangGraph, AWS, Vercel, NLP, LLM, Vector Databases, Prompt Engineering",
-    url: "https://www.linkedin.com/company/aigovsandbox/",
+    title: "The Lean Startup",
+    author: "Eric Ries",
+    note: "Build, measure, learn. Test demand before you build the whole thing.",
   },
   {
-    role: "Founding Engineer",
-    company: "Xenara AI",
-    note: "Pivoted from customer support SaaS to custom AI solutions for businesses",
-    period: "November 2024 – June 2025",
-    description:
-      "Led a team of 5 shipping AI assistant features — embeddings, GPT models, real-time summarization — and a hybrid retrieval pipeline (keyword + vector) that improved chatbot response quality by 60% in production.",
-    tools:
-      "Python, OpenAI API, GPT models, Vector Embeddings, FastAPI, MongoDB, Pinecone, Docker, AWS, Git/GitHub, Jira",
-    url: "https://www.linkedin.com/company/xenara-inc/",
+    title: "Shoe Dog",
+    author: "Phil Knight",
+    note: "Nike's founder on the years of near-bankruptcy before anyone knew the name.",
   },
   {
-    role: "Data Engineer",
-    company: "City of Ottawa",
-    note: "Modernizing legacy data infrastructure to cloud-native technology",
-    period: "May 2024 – December 2024",
-    description:
-      "Migrated IBM DataStage ETL to SAP BW/4HANA ($150K in annual licensing savings) and automated Azure DevOps migrations with REST APIs and Bash scripting, cutting licensing costs by $3,500/month.",
-    tools:
-      "Python, SQL, Bash, IBM DataStage, SAP BW/4HANA, Azure DevOps, Azure Data Factory, Microsoft Fabric, Power BI, REST APIs",
-    url: "https://www.linkedin.com/company/city-of-ottawa/",
+    title: "Elon Musk",
+    author: "Ashlee Vance",
+    note: "How Tesla and SpaceX were built — and what that level of intensity costs.",
   },
   {
-    role: "Vice President of Software Development",
-    company: "Capital Technology Network",
-    note: "Largest hackathon in Ottawa & one of the largest in Canada",
-    period: "November 2024 – May 2025",
-    description:
-      "Led 5 developers shipping open-source web apps (TypeScript, React, Tailwind, Vercel), with Cloudflare securing endpoints against scraping.",
-    tools:
-      "TypeScript, React, Tailwind CSS, Vercel, Cloudflare, GitHub Actions, Open Source",
-    url: "https://www.linkedin.com/company/hackthehill/",
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    note: "Taste, focus and product obsession, warts and all.",
   },
-  {
-    role: "Data Architect",
-    company: "Pyralume",
-    note: "Built payment infrastructure for a startup",
-    period: "January 2025 – April 2025",
-    description:
-      "Owned money-movement infrastructure end to end — Stripe billing, payment-rail integrations, and webhook-driven reconciliation that automated cash collection for 30 customers.",
-    tools:
-      "TypeScript, Stripe, Python, PostgreSQL, Webhooks, AWS",
-    url: "https://www.linkedin.com/company/pyralume/",
-  },
+];
+
+const ESSAYS = [
+  { title: "Do Things That Don't Scale",     author: "Paul Graham", url: "https://paulgraham.com/ds.html"           },
+  { title: "Startup = Growth",               author: "Paul Graham", url: "https://paulgraham.com/growth.html"       },
+  { title: "Schlep Blindness",               author: "Paul Graham", url: "https://paulgraham.com/schlep.html"       },
+  { title: "Default Alive or Default Dead?", author: "Paul Graham", url: "https://paulgraham.com/aord.html"         },
+  { title: "Founder Mode",                   author: "Paul Graham", url: "https://paulgraham.com/foundermode.html"  },
+  { title: "How to Do Great Work",           author: "Paul Graham", url: "https://paulgraham.com/greatwork.html"    },
+  { title: "How to Get Startup Ideas",       author: "Paul Graham", url: "https://paulgraham.com/startupideas.html" },
+  { title: "Why to Not Not Start a Startup", author: "Paul Graham", url: "https://paulgraham.com/notnot.html"       },
+  { title: "The Only Thing That Matters",    author: "Marc Andreessen", url: "https://pmarchive.com/guide_to_startups_part4.html" },
+  { title: "Services: The New Software",     author: "Julien Bek, Sequoia", url: "https://sequoiacap.com/article/services-the-new-software" },
+  { title: "How To Be Successful",           author: "Sam Altman",  url: "https://blog.samaltman.com/how-to-be-successful" },
+  { title: "Startup Playbook",               author: "Sam Altman",  url: "https://playbook.samaltman.com/" },
+  { title: "Fast",                           author: "Patrick Collison", url: "https://patrickcollison.com/fast" },
 ];
 
 
@@ -144,26 +127,43 @@ export default function Index() {
 
       <hr className="section-divider" />
 
-      {/* ── Experience ───────────────────────────── */}
-      <section id="experience">
-        <h2>Experience</h2>
-        <div className="exp-list">
-          {EXPERIENCE.map((exp, i) => (
-            <div key={i} className="exp-entry">
-              <div className="exp-header">
-                <span className="exp-role">{exp.role}</span>
-                <span className="exp-sep">&nbsp;at&nbsp;</span>
-                <a href={exp.url} target="_blank" rel="noopener noreferrer" className="exp-company">
-                  {exp.company}
-                </a>
-                <span className="exp-period">{exp.period}</span>
-              </div>
-              {exp.note && <p className="exp-note">{exp.note}</p>}
-              <p className="exp-desc">{exp.description}</p>
-              <p className="exp-tools">{exp.tools}</p>
-            </div>
+      {/* ── Writing ──────────────────────────────── */}
+      <section id="writing">
+        <h2>Writing</h2>
+        <ul className="plain-list">
+          {MY_ARTICLES.map(article => (
+            <li key={article.url}>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
+            </li>
           ))}
-        </div>
+          <li className="item-meta">A lot more coming soon :)</li>
+        </ul>
+      </section>
+
+      <hr className="section-divider" />
+
+      {/* ── Reading ──────────────────────────────── */}
+      <section id="reading">
+        <h2>Books I recommend</h2>
+        <ul className="plain-list">
+          {BOOKS.map(book => (
+            <li key={book.title}>
+              <span className="item-title">{book.title}</span>
+              <span className="item-meta"> — {book.author}</span>
+              <p className="item-note">{book.note}</p>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="subsection-heading">Essays I recommend</h2>
+        <ul className="plain-list">
+          {ESSAYS.map(essay => (
+            <li key={essay.url}>
+              <a href={essay.url} target="_blank" rel="noopener noreferrer">{essay.title}</a>
+              <span className="item-meta"> — {essay.author}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <hr className="section-divider" />

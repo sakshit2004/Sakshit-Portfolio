@@ -80,6 +80,49 @@
       radial-gradient(1px 1px at 69% 96%, rgba(255,255,255,0.40), transparent);
   }
 
+  /* Galaxy haze + dense star dust behind everything */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      /* star dust: each dot tiles at its own odd size, so the repeats never line up into rows */
+      radial-gradient(1px 1px at 23px 41px,   rgba(255,255,255,0.40), transparent),
+      radial-gradient(1px 1px at 151px 97px,  rgba(200,215,255,0.32), transparent),
+      radial-gradient(1px 1px at 79px 163px,  rgba(255,255,255,0.28), transparent),
+      radial-gradient(1px 1px at 197px 19px,  rgba(255,240,220,0.32), transparent),
+      radial-gradient(1px 1px at 233px 211px, rgba(255,255,255,0.26), transparent),
+      radial-gradient(1px 1px at 61px 277px,  rgba(210,220,255,0.30), transparent),
+      /* faint Milky Way sweep across the viewport */
+      linear-gradient(
+        150deg,
+        transparent 28%,
+        hsl(230 60% 60% / 0.045) 40%,
+        hsl(220 70% 80% / 0.07) 48%,
+        hsl(230 60% 60% / 0.045) 56%,
+        transparent 68%
+      ),
+      /* nebula clouds */
+      radial-gradient(ellipse 45% 35% at 8% 18%,  hsl(280 70% 45% / 0.10), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 95% 40%, hsl(200 80% 45% / 0.08), transparent 70%),
+      radial-gradient(ellipse 50% 35% at 30% 95%, hsl(330 70% 45% / 0.07), transparent 70%),
+      radial-gradient(ellipse 35% 30% at 70% 8%,  hsl(250 70% 55% / 0.07), transparent 70%);
+    background-size:
+      173px 191px,
+      227px 211px,
+      263px 241px,
+      307px 283px,
+      349px 331px,
+      389px 367px,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%;
+  }
+
   h1, h2, h3 {
     color: hsl(var(--foreground));
     font-family: Georgia, Charter, Cambria, serif;
@@ -213,74 +256,36 @@ section h2 {
   margin-bottom: 1.75rem;
 }
 
-/* ── Experience ──────────────────────────────────── */
+/* ── Reading / Writing ───────────────────────────── */
 
-.exp-list {
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: 0.9rem;
 }
 
-.exp-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.exp-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 0.25em;
-}
-
-.exp-role {
+.item-title {
   font-weight: 600;
   color: hsl(var(--foreground));
 }
 
-.exp-sep {
+section h2.subsection-heading {
+  margin-top: 2.75rem;
+}
+
+.item-meta {
   color: hsl(var(--muted-foreground));
-  font-size: 0.9em;
 }
 
-.exp-company {
-  color: hsl(var(--accent));
-}
-
-.exp-period {
-  font-family: 'Courier New', monospace;
-  font-size: 0.75em;
-  color: hsl(var(--muted-foreground));
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-.exp-note {
-  display: inline-block;
-  align-self: flex-start;
-  font-family: 'Courier New', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  color: hsl(214 82% 75%);
-  background: hsl(214 60% 18% / 0.55);
-  border: 1px solid hsl(214 60% 30% / 0.5);
-  padding: 0.15rem 0.55rem;
-  margin-top: 0.1rem;
-}
-
-.exp-desc {
-  color: hsl(var(--foreground));
-  font-size: 0.94rem;
-  line-height: 1.7;
-}
-
-.exp-tools {
-  font-family: 'Courier New', monospace;
-  font-size: 0.76rem;
-  color: hsl(var(--muted-foreground));
+.item-note {
+  font-size: 0.88rem;
+  color: hsl(var(--secondary-foreground));
   line-height: 1.6;
 }
+
 
 /* ── Skills ──────────────────────────────────────── */
 
@@ -340,6 +345,109 @@ section h2 {
 }
 
 /* ── Contact ─────────────────────────────────────── */
+
+/* ── Contact: galaxy backdrop ───────────────────── */
+
+html,
+body {
+  overflow-x: clip;
+}
+
+#contact {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Milky Way band + nebula clouds, full-bleed behind the section */
+#contact::before,
+#contact::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -7rem;
+  bottom: -5rem;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 75%, transparent);
+          mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 75%, transparent);
+}
+
+#contact::before {
+  background:
+    /* nebula clouds */
+    radial-gradient(ellipse 26% 32% at 14% 38%, hsl(300 70% 50% / 0.22), transparent 70%),
+    radial-gradient(ellipse 28% 30% at 88% 62%, hsl(190 80% 48% / 0.18), transparent 70%),
+    radial-gradient(ellipse 20% 24% at 74% 30%, hsl(265 75% 60% / 0.18), transparent 70%),
+    radial-gradient(ellipse 24% 22% at 28% 74%, hsl(340 75% 55% / 0.14), transparent 70%),
+    /* bright galactic core */
+    radial-gradient(ellipse 18% 10% at 58% 46%, hsl(35 85% 80% / 0.30), transparent 70%),
+    /* Milky Way band: a diagonal stripe with a dark dust lane down the middle */
+    linear-gradient(
+      164deg,
+      transparent 30%,
+      hsl(235 60% 55% / 0.10) 39%,
+      hsl(220 70% 78% / 0.24) 46%,
+      hsl(228 55% 3% / 0.35) 49.5%,
+      hsl(215 70% 80% / 0.22) 53%,
+      hsl(235 60% 55% / 0.10) 60%,
+      transparent 69%
+    );
+  background-size: 115% 100%;
+  background-position: 0% 50%;
+  filter: blur(5px);
+  animation: nebula-drift 50s ease-in-out infinite alternate;
+}
+
+/* Dense star dust concentrated along the band */
+#contact::after {
+  background-image:
+    radial-gradient(1px 1px at 12% 58%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 19% 52%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(1.5px 1.5px at 26% 47%, rgba(220,230,255,0.85), transparent),
+    radial-gradient(1px 1px at 33% 55%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 38% 44%, rgba(255,240,220,0.7), transparent),
+    radial-gradient(1px 1px at 44% 51%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 49% 46%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 55% 41%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 58% 49%, rgba(255,235,210,0.75), transparent),
+    radial-gradient(1px 1px at 63% 38%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 67% 45%, rgba(210,225,255,0.85), transparent),
+    radial-gradient(1px 1px at 72% 36%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 78% 41%, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1px 1px at 84% 33%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1px 1px at 90% 37%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 8% 20%, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1px 1px at 41% 15%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 93% 78%, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1px 1px at 22% 85%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 61% 82%, rgba(255,255,255,0.35), transparent);
+  animation: star-twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-drift {
+  from { background-position: 0% 50%;   }
+  to   { background-position: 100% 50%; }
+}
+
+@keyframes star-twinkle {
+  from { opacity: 0.7; }
+  to   { opacity: 1;   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #contact::before,
+  #contact::after {
+    animation: none;
+  }
+}
+
+/* Keep form fields readable over the glow */
+#contact .form-field input,
+#contact .form-field textarea {
+  background-color: hsl(var(--input) / 0.85);
+  backdrop-filter: blur(4px);
+}
 
 .contact-intro {
   font-size: 0.95rem;
@@ -495,13 +603,6 @@ section h2 {
 
   .form-row {
     grid-template-columns: 1fr;
-  }
-
-  .exp-period {
-    margin-left: 0;
-    display: block;
-    width: 100%;
-    margin-top: 0.1rem;
   }
 
   .gallery-grid {
